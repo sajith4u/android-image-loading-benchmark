@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Image_Cache_Benchmark</string>
+    <string name="action_settings">Settings</string>
+</resources>
