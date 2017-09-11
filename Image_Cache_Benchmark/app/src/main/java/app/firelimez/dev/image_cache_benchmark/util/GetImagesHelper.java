@@ -5,13 +5,11 @@ import java.util.List;
 
 import app.firelimez.dev.image_cache_benchmark.ImageLoadItem;
 
-/**
- * Created by sajith on 9/10/17.
- */
 
 public class GetImagesHelper {
 
     public List<ImageLoadItem> getImageLoadItems() {
+
         List<ImageLoadItem> items = new ArrayList<>();
         ImageLoadItem item1 = new ImageLoadItem();
         item1.setImageUrl("https://cdn.pixabay.com/photo/2016/11/19/11/09/animal-1838635_960_720.jpg");
@@ -73,6 +71,19 @@ public class GetImagesHelper {
         ImageLoadItem item20 = new ImageLoadItem();
         item20.setImageUrl("https://cdn.pixabay.com/photo/2017/08/10/06/23/pizza-2619013_960_720.jpg");
 
+        ImageLoadItem item21 = new ImageLoadItem();
+        item21.setImageUrl("https://cdn.pixabay.com/photo/2012/04/26/22/31/substances-43354_960_720.jpg");
+
+
+        ImageLoadItem item22 = new ImageLoadItem();
+        item22.setImageUrl("https://cdn.pixabay.com/photo/2014/11/29/20/22/clothes-peg-550875_960_720.jpg");
+
+        ImageLoadItem item23 = new ImageLoadItem();
+        item23.setImageUrl("https://cdn.pixabay.com/photo/2014/11/29/20/22/clothes-peg-550875_960_720.jpg");
+
+        ImageLoadItem item24 = new ImageLoadItem();
+        item24.setImageUrl("https://cdn.pixabay.com/photo/2017/08/13/15/01/beautiful-2637484_960_720.jpg");
+
         items.add(item1);
         items.add(item2);
         items.add(item3);
@@ -93,6 +104,10 @@ public class GetImagesHelper {
         items.add(item18);
         items.add(item19);
         items.add(item20);
+        items.add(item21);
+        items.add(item22);
+        items.add(item23);
+        items.add(item24);
 
         return items;
     }
