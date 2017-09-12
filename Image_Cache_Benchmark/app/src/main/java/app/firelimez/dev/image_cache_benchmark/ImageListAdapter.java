@@ -11,12 +11,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class GlideAdapter extends BaseAdapter {
+import app.firelimez.dev.image_cache_benchmark.util.ImageLoadHelper;
+
+public class ImageListAdapter extends BaseAdapter {
     private List<ImageLoadItem> items;
     private Context ctx;
     private LayoutInflater lInflater;
 
-    public GlideAdapter(Context ctx, List<ImageLoadItem> items) {
+    public ImageListAdapter(Context ctx, List<ImageLoadItem> items) {
         this.ctx = ctx;
         this.lInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
@@ -46,6 +48,7 @@ public class GlideAdapter extends BaseAdapter {
         Glide.with(ctx)
                 .load(item.getImageUrl())
                 .into(logo);
+        /*ImageLoadHelper.loadPicassoImage(item.getImageUrl(), logo);*/
         return convertView;
     }
 }

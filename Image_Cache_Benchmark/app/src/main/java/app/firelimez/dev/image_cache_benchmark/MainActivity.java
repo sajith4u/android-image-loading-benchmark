@@ -1,16 +1,12 @@
 package app.firelimez.dev.image_cache_benchmark;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
@@ -21,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView images;
 
-    private GlideRecyclerAdapter glideRecyclerAdapter;
+    private ImageListRecyclerAdapter imageListRecyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         GetImagesHelper getImagesHelper = new GetImagesHelper();
-        GlideAdapter glideAdapter = new GlideAdapter(this, getImagesHelper.getImageLoadItems());
+        ImageListAdapter imageListAdapter = new ImageListAdapter(this, getImagesHelper.getImageLoadItems());
         // ListView items = (ListView) findViewById(R.id.items);
-        //  items.setAdapter(glideAdapter);
+        //  items.setAdapter(imageListAdapter);
         images = (RecyclerView) findViewById(R.id.products);
         RequestManager requestManager = Glide.with(this);
-        glideRecyclerAdapter = new GlideRecyclerAdapter(this, getImagesHelper.getImageLoadItems(), requestManager);
-        images.setAdapter(glideRecyclerAdapter);
+        imageListRecyclerAdapter = new ImageListRecyclerAdapter(this, getImagesHelper.getImageLoadItems(), requestManager);
+        images.setAdapter(imageListRecyclerAdapter);
         images.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
     }
